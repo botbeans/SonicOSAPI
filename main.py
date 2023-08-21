@@ -1,6 +1,5 @@
 from sonicapi import *
 
-
 def create_tenant() -> bool:
     """ Ask the user if a new tenant will need to be created for
       the firewall prior to calling the API call"""
@@ -15,8 +14,8 @@ def create_tenant() -> bool:
 
 def main():
     default_username = "admin"
-    default_password = "password"
-    s = sonicapi("192.168.168.168", "443", default_username, default_password)
+    default_password = input("Enter in login password...")
+    s = sonicapi("192.168.168.168", default_username, default_password)
     print(s.auth())
     #print(s.tenant_count())
     #print("Connection to NSM API successfull")
