@@ -26,7 +26,29 @@ class sonicapi:
             print("SUCCESSFUL")
             response = r.json()
             return response
-    
+        
+    def get_address_objects_IPV4(self):
+        route = "/address-objects/ipv4"
+        url = self.baseurl + route
+        r = requests.get(url, auth=self.authinfo, headers=self.headers, verify=False)
+        if r.status_code != 200:
+            print("FAILED")
+            return f"{r.status_code}\n{r.json()}"
+        else:
+            response = r.json()
+            return response
+
+    def get_address_objects_FQDN(self):
+        route = "/address-objects/FQDN"
+        url = self.baseurl + route
+        r = requests.get(url, auth=self.authinfo, headers=self.headers, verify=False)
+        if r.status_code != 200:
+            print("FAILED")
+            return f"{r.status_code}\n{r.json()}"
+        else:
+            response = r.json()
+            return response
+        
     def tenant_count(self):
         route = "/tenants/count"
         url = self.baseurl + route
@@ -37,14 +59,5 @@ class sonicapi:
         else:
             response = r.json()
             return response
-    """     
-    def new_tenant(self, payload):
-        route = "/tenants"
-        url = self.baseurl + route
-        r = requests.post(url, payload, self.headers)
-
-        if r.status_code != 200:
-            return r.status_code
-        else:
-            response = r.json()
-            return response  """
+    
+    
