@@ -1,13 +1,15 @@
 [tool.poetry]
 name = "sonicosapi"
 version = "0.1.0"
-description = "internal tool to configure sonicwall firewalls"
-authors = ["Elvin Salcedo <esalcedo@avitpartners.com>"]
+description = ""
+authors = ["botbeans <esalcedo@avitpartners.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
 requests = "^2.31.0"
+urllib3 = "^2.0.4"
+ordereddict = "^1.1"
 
 
 [build-system]
